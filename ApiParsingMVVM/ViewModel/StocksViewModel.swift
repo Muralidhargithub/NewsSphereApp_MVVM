@@ -13,7 +13,7 @@ class StocksViewModel {
     private var data: [stockArticle] = []
     private let sourceData: GitData = DataGit.shared
     
-    var didUpdateData: (() -> Void)?
+    var didUpdateData: (() -> ())?
     
     func fetchStocks() {
         sourceData.getData(url: ServerConstants.baseURL) { [weak self] (result: Stocks) in
